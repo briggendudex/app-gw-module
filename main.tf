@@ -62,14 +62,15 @@ resource "azurerm_application_gateway" "app_gateway" {
   name = "testlistener"
   frontend_ip_configuration_name = "app_gateway_frontend_ip"
   frontend_port_name = "app_gateway_frontend_port_http"
+  protocol = "http"
   }
-  http_listener {
-  name = "testlisten-two"
-  frontend_ip_configuration_name = "app_gateway_frontend_ip"
-  frontend_port_name = "app_gateway_frontend_port_https"
-  ssl_certificate_name = var.ssl_cert_name
-  require_server_name_indication = true
-  }
+  # http_listener {
+  # name = "testlisten-two"
+  # frontend_ip_configuration_name = "app_gateway_frontend_ip"
+  # frontend_port_name = "app_gateway_frontend_port_https"
+  # ssl_certificate_name = var.ssl_cert_name
+  #}
+  
   }
 
 
