@@ -69,11 +69,11 @@ resource "azurerm_application_gateway" "app_gateway" {
   }
 
   request_routing_rule {
-    name                       = Somerulename
+    name                       = "Somerulename"
     rule_type                  = "Basic"
     http_listener_name         = "testrule"
-    backend_address_pool_name  = local.backend_address_pool_name
-    backend_http_settings_name = local.http_setting_name
+    backend_address_pool_name  = "someaddresspoolname"
+    backend_http_settings_name = "somehttpsettingsname"
   }
 
   http_listener {
