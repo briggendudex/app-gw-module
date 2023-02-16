@@ -1,4 +1,4 @@
-# Use the AzureRM provider
+## Use the AzureRM provider
 provider "azurerm" {
   features {}
 }
