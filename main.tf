@@ -37,17 +37,17 @@ resource "azurerm_application_gateway_http_listener" "http_listener" {
 }
 
 # Create an HTTPS listener for the Application Gateway
+
 resource "azurerm_application_gateway_https_listener" "https_listener" {
   name                           = var.https_listener_name
   resource_group_name            = var.resource_group_name
-  application_gateway_name       = module.app_gateway.app_gateway_name
+  application_gateway_name       = azurerm_application_gateway.app_gateway.name
   frontend_ip_configuration_name = "app_gateway_frontend_ip"
   frontend_port_name             = "app_gateway_frontend_port_https"
   protocol                       = "Https"
-  ssl_certificate_name           = var.ssl_cert_name
+  ssl_certificate                = base64decode(data.azurerm_key_vault_secret.ssl_cert.value)
   require_server_name_indication = true
 }
-
 # How to use
 # Create the Application Gateway
 # module "app_gateway" {
