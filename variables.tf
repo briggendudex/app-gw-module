@@ -124,3 +124,8 @@ variable "health_probe_name" {
   type        = string
   default     = "health_probe"
 }
+
+variable "backend_ips" {
+  type = list(string)
+  default = [ "10.0.0.55", "10.0.0.56" ]
+}
