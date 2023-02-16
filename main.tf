@@ -24,7 +24,7 @@ resource "azurerm_lb_backend_address_pool" "backend_pool" {
   name                = var.backend_pool_name
   resource_group_name = var.resource_group_name
   loadbalancer_id     = module.app_gateway.app_gateway_id
-  backend_ip_addresses = var.backend_ips
+  backend_ips = var.backend_ips
  }
 
 # Create an HTTP listener for the Application Gateway
@@ -37,6 +37,7 @@ resource "azurerm_application_gateway_http_listener" "http_listener" {
   protocol                       = "Http"
 }
 
+#
 # Create an HTTPS listener for the Application Gateway
 
 # resource "azurerm_application_gateway_https_listener" "https_listener" {
