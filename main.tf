@@ -58,6 +58,24 @@ resource "azurerm_application_gateway" "app_gateway" {
   backend_address_pool {
   name = "backendone"
   }
+
+  backend_http_settings {
+    name                  = "somename"
+    cookie_based_affinity = "Disabled"
+    path                  = "/path1/"
+    port                  = 80
+    protocol              = "Http"
+    request_timeout       = 60
+  }
+
+  request_routing_rule {
+    name                       = Somerulename
+    rule_type                  = "Basic"
+    http_listener_name         = "testrule"
+    backend_address_pool_name  = local.backend_address_pool_name
+    backend_http_settings_name = local.http_setting_name
+  }
+
   http_listener {
   name = "testlistener"
   frontend_ip_configuration_name = "app_gateway_frontend_ip"
@@ -70,7 +88,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   # frontend_port_name = "app_gateway_frontend_port_https"
   # ssl_certificate_name = var.ssl_cert_name
   #}
-  
+
   }
 
 
