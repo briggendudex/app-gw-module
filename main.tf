@@ -27,7 +27,7 @@ resource "azurerm_lb_backend_address_pool" "backend_pool" {
   backend_ips = var.backend_ips
  }
 
- # Create the Application Gateway
+# # Create the Application Gateway
 resource "azurerm_application_gateway" "app_gateway" {
   name                = "myappgateway"
   resource_group_name = var.resource_group_name
