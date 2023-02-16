@@ -33,7 +33,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   name                = "myappgateway"
   resource_group_name = var.resource_group_name
   location            = var.location
-  
+
   sku {
     name     = "Standard_v2"
     tier     = "Standard_v2"
@@ -52,11 +52,11 @@ resource "azurerm_application_gateway" "app_gateway" {
     port = 443
   }
   frontend_ip_configuration {
-  name = "app_gateway_frontend_ip"
-  public_ip_address_id = azurerm_public_ip.app_gateway_public_ip.id
+    name                 = "app_gateway_frontend_ip"
+    public_ip_address_id = azurerm_public_ip.app_gateway_public_ip.id
   }
   backend_address_pool {
-  name = "backendone"
+    name = "backendone"
   }
 
   backend_http_settings {
@@ -77,10 +77,10 @@ resource "azurerm_application_gateway" "app_gateway" {
   }
 
   http_listener {
-  name = "testlistener"
-  frontend_ip_configuration_name = "app_gateway_frontend_ip"
-  frontend_port_name = "app_gateway_frontend_port_http"
-  protocol = "Http"
+    name                           = "testlistener"
+    frontend_ip_configuration_name = "app_gateway_frontend_ip"
+    frontend_port_name             = "app_gateway_frontend_port_http"
+    protocol                       = "Http"
   }
   # http_listener {
   # name = "testlisten-two"
@@ -89,7 +89,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   # ssl_certificate_name = var.ssl_cert_name
   #}
 
-  }
+}
 
 
 # Create an HTTP listener for the Application Gateway
