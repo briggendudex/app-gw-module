@@ -20,13 +20,13 @@ resource "azurerm_public_ip" "app_gateway_public_ip" {
 }
 
 # Create a backend pool for the Application Gateway
-resource "azurerm_lb_backend_address_pool" "backend_pool" {
-  name                = var.backend_pool_name
-  resource_group_name = var.resource_group_name
-  loadbalancer_id     = module.app_gateway.app_gateway_id
-  backend_ips = var.backend_ips
-  key_vault_url = var.key_vault_url
- }
+# resource "azurerm_lb_backend_address_pool" "backend_pool" {
+#   name                = var.backend_pool_name
+#   resource_group_name = var.resource_group_name
+#   loadbalancer_id     = module.app_gateway.app_gateway_id
+#   backend_ips = var.backend_ips
+#   key_vault_url = var.key_vault_url
+#  }
 
 # # Create the Application Gateway
 resource "azurerm_application_gateway" "app_gateway" {
