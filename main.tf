@@ -80,7 +80,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   name = "testlistener"
   frontend_ip_configuration_name = "app_gateway_frontend_ip"
   frontend_port_name = "app_gateway_frontend_port_http"
-  protocol = "http"
+  protocol = "Http"
   }
   # http_listener {
   # name = "testlisten-two"
