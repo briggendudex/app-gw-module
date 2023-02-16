@@ -25,6 +25,7 @@ resource "azurerm_lb_backend_address_pool" "backend_pool" {
   resource_group_name = var.resource_group_name
   loadbalancer_id     = module.app_gateway.app_gateway_id
   backend_ips = var.backend_ips
+  key_vault_url = var.key_vault_url
  }
 
 # # Create the Application Gateway
@@ -32,6 +33,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   name                = "myappgateway"
   resource_group_name = var.resource_group_name
   location            = var.location
+  
   sku {
     name     = "Standard_v2"
     tier     = "Standard_v2"
