@@ -125,5 +125,8 @@ variable "health_probe_name" {
   default     = "health_probe"
 }
 
+variable "key_vault_url" {
+  type = string
+}
 #
 #
