@@ -59,12 +59,12 @@ resource "azurerm_application_gateway" "app_gateway" {
   name = azurerm_lb_backend_address_pool.backend_pool.name
   }
   http_listener {
-  name = azurerm_application_gateway_http_listener.http_listener.name
+  name = "testlistener"
   frontend_ip_configuration_name = "app_gateway_frontend_ip"
   frontend_port_name = "app_gateway_frontend_port_http"
   }
   http_listener {
-  name = azurerm_application_gateway_https_listener.https_listener.name
+  name = "testlisten-two"
   frontend_ip_configuration_name = "app_gateway_frontend_ip"
   frontend_port_name = "app_gateway_frontend_port_https"
   ssl_certificate_name = var.ssl_cert_name
