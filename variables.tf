@@ -128,5 +128,13 @@ variable "health_probe_name" {
 variable "key_vault_url" {
   type = string
 }
+
+variable "key_vault_id" {
+
+  type = string
+  
+}
+
+
 #
 #
