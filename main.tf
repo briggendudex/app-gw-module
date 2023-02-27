@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "appgw-resourcegroup" {
 # Create a subnet for the Application Gateway
 resource "azurerm_subnet" "app_gateway_subnet" {
   name                 = var.subnet_name
-  resource_group_name  = var.resource_group_name
+  resource_group_name  = var.vnet-rg-name
   virtual_network_name = var.virtual_network_name
   address_prefixes     = [var.subnet_address_prefix]
 }
