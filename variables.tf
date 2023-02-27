@@ -10,6 +10,11 @@ variable "location" {
   type        = string
 }
 
+variable "vnet-rg-name" {
+  type = string
+  
+}
+
 # Declare a variable for the name of the subnet where the Application Gateway should be deployed
 variable "subnet_name" {
   description = "The name of the subnet where the Application Gateway should be deployed"
