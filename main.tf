@@ -62,7 +62,7 @@ resource "azurerm_application_gateway" "app_gateway" {
     public_ip_address_id = azurerm_public_ip.app_gateway_public_ip.id
   }
   backend_address_pool {
-    name = "backendone"
+    name = var.backend_address_pool_name
   }
 
   backend_http_settings {
