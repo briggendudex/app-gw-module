@@ -50,7 +50,7 @@ resource "azurerm_application_gateway" "app_gateway" {
     subnet_id = azurerm_subnet.app_gateway_subnet.id
   }
   frontend_port {
-    name = "app_gateway_frontend_port_http"
+    name = var.frontend_port_name
     port = 80
   }
   # frontend_port {
