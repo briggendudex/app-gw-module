@@ -58,7 +58,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   #   port = 443
   # }
   frontend_ip_configuration {
-    name                 = var.frontend_ip_configuration.name
+    name                 = var.frontend_ip_configuration_name
     public_ip_address_id = azurerm_public_ip.app_gateway_public_ip.id
   }
   backend_address_pool {
@@ -76,7 +76,7 @@ resource "azurerm_application_gateway" "app_gateway" {
 
   http_listener {
     name                           = var.http_listener_name
-    frontend_ip_configuration_name = var.frontend_ip_configuration.name
+    frontend_ip_configuration_name = var.frontend_ip_configuration_name
     frontend_port_name             = var.frontend_port_name
     protocol                       = "Http"
   }
