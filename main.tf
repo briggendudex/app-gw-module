@@ -6,7 +6,7 @@ provider "azurerm" {
 # Create the resourcegroup
 resource "azurerm_resource_group" "appgw-resourcegroup" {
   name = var.resource_group_name
-  location = "westeurope"
+  location = "West Europe"
   
 }
 # Create a subnet for the Application Gateway
