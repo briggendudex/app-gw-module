@@ -76,7 +76,7 @@ resource "azurerm_application_gateway" "app_gateway" {
 
   http_listener {
     name                           = var.http_listener_name
-    frontend_ip_configuration_name = azurerm_app_gateway.frontend_ip_configuration.name
+    frontend_ip_configuration_name = app_gateway.frontend_ip_configuration.name
     frontend_port_name             = var.frontend_port_name
     protocol                       = "Http"
   }
