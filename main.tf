@@ -74,13 +74,13 @@ resource "azurerm_application_gateway" "app_gateway" {
     request_timeout       = 60
   }
 
-  request_routing_rule {
-    name                       = "Somerulename"
-    rule_type                  = "Basic"
-    http_listener_name         = "testrule"
-    backend_address_pool_name  = "someaddresspoolname"
-    backend_http_settings_name = "somehttpsettingsname"
-  }
+  # request_routing_rule {
+  #   name                       = "Somerulename"
+  #   rule_type                  = "Basic"
+  #   http_listener_name         = "testrule"
+  #   backend_address_pool_name  = "someaddresspoolname"
+  #   backend_http_settings_name = "somehttpsettingsname"
+  # }
 
   http_listener {
     name                           = "testlistener"
