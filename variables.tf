@@ -33,7 +33,7 @@ variable "subnet_address_prefix" {
 variable "public_ip_name" {
   description = "The name of the public IP address for the Application Gateway"
   type        = string
-  default     = "app_gateway_public_ip"
+  
 }
 
 # Declare a variable for the allocation method of the public IP address for the Application Gateway
