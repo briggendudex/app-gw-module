@@ -66,7 +66,7 @@ resource "azurerm_application_gateway" "app_gateway" {
   }
 
   backend_http_settings {
-    name                  = "somename"
+    name                  = var.backend_http_settings_name
     cookie_based_affinity = "Disabled"
     path                  = "/path1/"
     port                  = 80
