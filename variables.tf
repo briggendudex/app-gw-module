@@ -12,7 +12,7 @@ variable "location" {
 
 variable "vnet-rg-name" {
   type = string
-  
+
 }
 
 # Declare a variable for the name of the subnet where the Application Gateway should be deployed
@@ -26,14 +26,14 @@ variable "subnet_name" {
 variable "subnet_address_prefix" {
   description = "The address prefix of the subnet where the Application Gateway should be deployed"
   type        = string
-  
+
 }
 
 # Declare a variable for the name of the public IP address for the Application Gateway
 variable "public_ip_name" {
   description = "The name of the public IP address for the Application Gateway"
   type        = string
-  
+
 }
 
 # Declare a variable for the allocation method of the public IP address for the Application Gateway
@@ -137,18 +137,18 @@ variable "key_vault_url" {
 variable "key_vault_id" {
 
   type = string
-  
+
 }
 
 variable "frontend_port_name" {
   type = string
-  
+
 }
 
 variable "request_routing_rule_name" {
   type = string
 
-} 
+}
 
 variable "listener_name" {
   type = string
@@ -167,6 +167,6 @@ variable "backend_http_settings_name" {
 variable "frontend_ip_configuration_name" {
   type = string
 
-  
+
 }
 #

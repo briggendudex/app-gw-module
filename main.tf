@@ -5,9 +5,9 @@ provider "azurerm" {
 
 # Create the resourcegroup
 resource "azurerm_resource_group" "appgw-resourcegroup" {
-  name = var.resource_group_name
+  name     = var.resource_group_name
   location = var.location
-  
+
 }
 # Create a subnet for the Application Gateway
 resource "azurerm_subnet" "app_gateway_subnet" {
@@ -23,6 +23,7 @@ resource "azurerm_public_ip" "app_gateway_public_ip" {
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = var.public_ip_allocation_method
+  sku                 = "Standard"
 }
 
 # Create a backend pool for the Application Gateway
