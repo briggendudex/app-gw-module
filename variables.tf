@@ -164,4 +164,9 @@ variable "http_setting_name" {
   type = string
 }
 #
+variable "var.frontend_ip_configuration.name" {
+  type = string
+  
+  
+}
 #
