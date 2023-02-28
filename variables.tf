@@ -26,7 +26,7 @@ variable "subnet_name" {
 variable "subnet_address_prefix" {
   description = "The address prefix of the subnet where the Application Gateway should be deployed"
   type        = string
-  default     = "10.0.1.0/24"
+  
 }
 
 # Declare a variable for the name of the public IP address for the Application Gateway
@@ -140,6 +140,28 @@ variable "key_vault_id" {
   
 }
 
+variable "frontend_port_name" {
+  type = string
+  
+}
 
+variable "request_routing_rule_name" {
+  type = string
+
+} 
+
+variable "listener_name" {
+  type = string
+
+}
+
+variable "backend_address_pool_name" {
+  type = string
+
+}
+
+variable "http_setting_name" {
+  type = string
+}
 #
 #
