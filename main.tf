@@ -53,10 +53,10 @@ resource "azurerm_application_gateway" "app_gateway" {
     name = "app_gateway_frontend_port_http"
     port = 80
   }
-  frontend_port {
-    name = "app_gateway_frontend_port_https"
-    port = 443
-  }
+  # frontend_port {
+  #   name = "app_gateway_frontend_port_https"
+  #   port = 443
+  # }
   frontend_ip_configuration {
     name                 = "app_gateway_frontend_ip"
     public_ip_address_id = azurerm_public_ip.app_gateway_public_ip.id
@@ -74,19 +74,20 @@ resource "azurerm_application_gateway" "app_gateway" {
     request_timeout       = 60
   }
 
-  # request_routing_rule {
-  #   name                       = "Somerulename"
-  #   rule_type                  = "Basic"
-  #   http_listener_name         = "testrule"
-  #   backend_address_pool_name  = "someaddresspoolname"
-  #   backend_http_settings_name = "somehttpsettingsname"
-  # }
-
   http_listener {
-    name                           = "testlistener"
-    frontend_ip_configuration_name = "app_gateway_frontend_ip"
-    frontend_port_name             = "app_gateway_frontend_port_http"
+    name                           = var.http_listener_name
+    frontend_ip_configuration_name = var.public_ip_name
+    frontend_port_name             = var.frontend_port_name
     protocol                       = "Http"
+  }
+
+  request_routing_rule {
+    name                       = var.request_routing_rule_name
+    rule_type                  = "Basic"
+    http_listener_name         = var.listener_name
+    backend_address_pool_name  = var.backend_address_pool_name
+    backend_http_settings_name = var.http_setting_name
+    priority                   = 1
   }
   # http_listener {
   # name = "testlisten-two"
