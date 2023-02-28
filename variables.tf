@@ -160,7 +160,7 @@ variable "backend_address_pool_name" {
 
 }
 
-variable "backend_http_setting_name" {
+variable "backend_http_settings_name" {
   type = string
 }
 #
